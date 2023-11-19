@@ -3,8 +3,11 @@ import React from "react";
 
 export const Inicio =()=>{
     return(
-    <div>
-        Aqui va el inicio
+        <div className="container">
+        <div className="display-5">
+            
+        </div>
+
     </div>
     )
 };
