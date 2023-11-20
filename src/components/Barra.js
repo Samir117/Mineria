@@ -1,37 +1,48 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
+export const Barra = ({ isAdmin, setIsAdmin }) => {
+    const navigate = useNavigate();
 
-export const Barra = () => {
+    const handleLogout = () => {
+        setIsAdmin(false);
+        navigate('/Inicio');
+    };
+
     return (
-        <nav class="navbar navbar-dark bg-dark fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Mineria Data</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Mineria Data</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="nav justify-content-center" >
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/Inicio">Inicio</a>
-                                <a class="nav-link" href="/Dashboard">Dashboard</a>
-                                <a class="nav-link" href="/Admin">Admin</a>
-                            </li>
-                        </ul>
-                        <form class="d-flex mt-3" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button class="btn btn-success" type="submit">Search</button>
-                        </form>
+        <>
+            <nav className="navbar navbar-dark bg-dark fixed-top">
+                <div className="container-fluid">
+                    <a className="navbar-brand" href="/Inicio">Mineria Data</a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="offcanvas offcanvas-end text-bg-dark flex-column" tabIndex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                        <div className="offcanvas-header">
+                            <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">Mineria Data</h5>
+                            <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div className="offcanvas-body">
+                            <ul className="nav justify-content-center">
+                                {isAdmin && (
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/Dashboard">Dashboard</a>
+                                        <button className="btn btn-danger mt-3" onClick={handleLogout}>Cerrar Sesión</button>
+                                    </li>
+                                )}
+                                <li className="nav-item">
+                                    <a className={`nav-link ${!isAdmin ? 'active' : ''}`} aria-current="page" href="/Inicio">Inicio</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className={`nav-link ${!isAdmin ? '' : 'hidden'}`} href="/Admin">Admin</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-
+            </nav>
+        </>
     );
-}
+};
 
 export default Barra;
