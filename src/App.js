@@ -1,31 +1,35 @@
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Barra from './components/Barra';
-import Inicio from './pages/Inicio';
-import Dashboard from './pages/Dashboard';
-import Admin from './pages/Admin';
-import { AuthProvider } from './token/Auth';
-import { useState } from 'react';
-function App() {
-  const [isAdmin, setIsAdmin] = useState(false); // Inicialmente no es administrador
+  import './App.css';
+  import { BrowserRouter, Route, Routes } from 'react-router-dom';
+  import Inicio from './pages/Inicio';
+  import Dashboard from './pages/Dashboard';
+  import Admin from './pages/Admin';
+  import { AuthProvider } from './token/Auth';
+  import { useState } from 'react';
+  import { useEffect } from 'react';
 
-  return (
 
-    <AuthProvider>
-      <BrowserRouter>
-        <div className='Barra'>
-          <Barra isAdmin={isAdmin} setIsAdmin={setIsAdmin}  />
-        </div>
-        <Routes>
-          <Route path="/*" element={<Inicio setIsAdmin={setIsAdmin} />} />
-          <Route path="/Inicio" element={<Inicio setIsAdmin={setIsAdmin} />} />
-          <Route exact path="/Dashboard" element={<Dashboard setIsAdmin={setIsAdmin} />} />
-          <Route exact path="/Admin" element={<Admin setIsAdmin={setIsAdmin} />} />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+  
+  function App() {
+    const storedIsAdmin = localStorage.getItem('isAdmin');
+    const [isAdmin, setIsAdmin] = useState(storedIsAdmin === 'true');
+    useEffect(() => {
+      // Almacena isAdmin en localStorage cada vez que cambia
+      localStorage.setItem('isAdmin', isAdmin);
+    }, [isAdmin]);
+    return (
 
-  );
-}
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/*" element={<Inicio isAdmin={isAdmin} />} />
+            <Route path="/Inicio" element={<Inicio isAdmin={isAdmin} />} />
+            <Route exact path="/Dashboard" element={<Dashboard isAdmin={isAdmin} />} />
+            <Route path="/Admin" element={<Admin isAdmin={isAdmin} setIsAdmin={setIsAdmin} />} />
+            </Routes>
+        </BrowserRouter>
+      </AuthProvider>
 
-export default App;
+    );
+  }
+
+  export default App;

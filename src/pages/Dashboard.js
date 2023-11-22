@@ -1,11 +1,11 @@
 import React from "react";
-import Barra from "../components/Barra";
-import { useAuth } from '../token/Auth';
+import BarraAdmin from "../components/BarraAdmin";
+
 export const Dashboard = () => {
-    const { setAdmin} = useAuth();
+
     return (
         <>
-            <Barra setAdmin={setAdmin} />
+            <BarraAdmin  />
         <div className="container">
             <div className="display-5">
                 DASHBOARD

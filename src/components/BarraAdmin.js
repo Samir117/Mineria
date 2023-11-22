@@ -1,15 +1,13 @@
 import React from "react";
 
-export const Barra = ({ isAdmin }) => {
-
-    console.log("es administrador en barra:", isAdmin);
+export const BarraAdmin = () => {
 
 
     return (
         <>
             <nav className="navbar bg-body-tertiary fixed-top">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="/Inicio">Shooping Clothes</a>
+                    <a className="navbar-brand" href="/Inicio">Mineria Datos</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -19,12 +17,12 @@ export const Barra = ({ isAdmin }) => {
                             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div className="offcanvas-body">
-                            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">               
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="/Inicio">Inicio</a>
-                                </li>                        
+                                    <a className="nav-link" href="/Dashboard">Dashboard</a>
+                                </li>                   
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/Admin"> Iniciar Sesion</a>
+                                    <a className="nav-link" href="/Inicio">Cerrar Sesion</a>
                                 </li>
                             </ul>
                         
@@ -36,4 +34,4 @@ export const Barra = ({ isAdmin }) => {
     );
 };
 
-export default Barra;
+export default BarraAdmin;
