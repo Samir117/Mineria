@@ -6,9 +6,11 @@
   import { AuthProvider } from './token/Auth';
   import { useState } from 'react';
   import { useEffect } from 'react';
+import { Resultados } from './pages/Resultados';
+import Prediccion from './pages/Prediccion';
 
 
-  
+
   function App() {
     const storedIsAdmin = localStorage.getItem('isAdmin');
     const [isAdmin, setIsAdmin] = useState(storedIsAdmin === 'true');
@@ -25,6 +27,8 @@
             <Route path="/Inicio" element={<Inicio isAdmin={isAdmin} />} />
             <Route exact path="/Dashboard" element={<Dashboard isAdmin={isAdmin} />} />
             <Route path="/Admin" element={<Admin isAdmin={isAdmin} setIsAdmin={setIsAdmin} />} />
+            <Route path="/Resultados" element={<Resultados isAdmin={isAdmin} />} />
+            <Route path="/Prediccion" element={<Prediccion isAdmin={isAdmin} />} />
             </Routes>
         </BrowserRouter>
       </AuthProvider>

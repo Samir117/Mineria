@@ -78,6 +78,9 @@
                     <div className="caja" >
                         <div className="login bg-dark text-white" >
                             <form className="form" onSubmit={handleLogin}>
+                            <div className="titulo display-6">
+                              Inicio de Sesion
+                            </div>
                                 <div className="form-group" >
                                     <label htmlFor="txtUsuario">Usuario:</label>
                                     <input
