@@ -1,6 +1,6 @@
 import React from "react";
 import BarraAdmin from "../components/BarraAdmin";
-
+import Footer from "../components/Footer";
 
 export const Resultados = () => {
     const codigoHTML = `
@@ -18521,6 +18521,7 @@ export const Resultados = () => {
 
 
             </div>
+            <Footer />
         </>
     );
 }

@@ -2,9 +2,6 @@ import React from "react";
 
 export const Barra = ({ isAdmin }) => {
 
-    console.log("es administrador en barra:", isAdmin);
-
-
     return (
         <>
             <nav className="navbar bg-body-tertiary fixed-top">
@@ -25,7 +22,10 @@ export const Barra = ({ isAdmin }) => {
                                 </li> 
                                 <li className="nav-item">
                                     <a className="nav-link" href="/Prediccion">Prediccion</a>
-                                </li>                       
+                                </li>   
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/Registro">Registro de Usuarios</a>
+                                </li>                      
                                 <li className="nav-item">
                                     <a className="nav-link" href="/Admin"> Iniciar Sesion</a>
                                 </li>

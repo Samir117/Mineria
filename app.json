@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "e5ae1ee9-7409-41df-bf0c-3eb1dab08742"
+      }
+    },
+    "android": {
+      "package": "com.samirrojas.mineria"
+    }
+  }
+}
