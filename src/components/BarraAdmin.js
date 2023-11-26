@@ -19,7 +19,10 @@ export const BarraAdmin = () => {
                         <div className="offcanvas-body">
                             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">  
                             <li className="nav-item">
-                                    <a className="nav-link" href="/Resultados  ">Resultados</a>
+                                    <a className="nav-link" href="/PrediccionAdmin  ">Prediccion</a>
+                                </li>  
+                            <li className="nav-item">
+                                    <a className="nav-link" href="/Resultados  ">Analisis de Datos</a>
                                 </li>                 
                                 <li className="nav-item">
                                     <a className="nav-link" href="/Dashboard">Dashboard</a>

@@ -18514,12 +18514,9 @@ export const Resultados = () => {
     return (
         <>
             <BarraAdmin />
-            <div className="white">
-                <h1>Mostrar Resultado</h1>
+            <div className="container white">
+                <h1 className="display-5">Mostrar Resultado</h1>
                 <div dangerouslySetInnerHTML={{ __html: codigoHTML }} />
-
-
-
             </div>
             <Footer />
         </>

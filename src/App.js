@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { Resultados } from './pages/Resultados';
 import Prediccion from './pages/Prediccion';
 import Registro from './pages/Registro';
+import { PrediccionAdmin } from './pages/PrediccionAdmin';
 
 
 
@@ -31,7 +32,7 @@ function App() {
           <Route path="/Resultados" element={<Resultados isAdmin={isAdmin} />} />
           <Route path="/Prediccion" element={<Prediccion isAdmin={isAdmin} />} />
           <Route path="/Registro" element={<Registro isAdmin={isAdmin} />} />
-
+          <Route path="/PrediccionAdmin" element={<PrediccionAdmin isAdmin={isAdmin} />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

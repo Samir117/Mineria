@@ -31,6 +31,20 @@
 
 }
 
+.login3 {
+  letter-spacing: 1px;
+  width: 700px;
+  /* Ancho del div */
+  height: 800px;
+  /* Altura del div */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 11%;
+  border: 1px solid;
+
+}
+
 .caja {
     margin: 5rem;
     display: flex;
@@ -41,7 +55,6 @@
 .contenedor {
     border-radius: 80px;
 }
-
 
 
 .footer{
@@ -76,10 +89,6 @@
   }
 
 
-
-
-
-
   .boton {
     display: flex;
     justify-content: center;
@@ -87,4 +96,10 @@
 
   .titulo{
     margin-bottom: 1.5rem;
+  }
+
+
+  .card{
+width: 18rem;
+
   }
