@@ -6,16 +6,17 @@ export const Dashboard = () => {
 
     return (
         <>
-            <BarraAdmin  />
-        <div className="container">
-            <div className="display-5">
-                DASHBOARD
+            <BarraAdmin />
+            <div className="container">
+                <div className="display-5">
+                    Dashboard            </div>
+                <iframe width="800" height="600" src="https://lookerstudio.google.com/embed/reporting/d5cbc81d-97de-475d-85b1-d4b1112e6877/page/zQNjD" title="Dash" ></iframe>
+                <Footer />
             </div>
-            <iframe width="800" height="600" src="https://lookerstudio.google.com/embed/reporting/421b6916-4a69-4a07-998d-0764689def9d/page/V7niD" title="Dash" ></iframe>
-        <Footer />
-        </div>
         </>
     )
 };
 
 export default Dashboard;
+
+

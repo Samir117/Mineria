@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 
 export const Prediccion = () => {
     const [edad, setedad] = useState('');
-    const [localizacion, setlocalizacion] = useState('');
     const [previa, setprevia] = useState('');
 
     const [selectedSizes, setSelectedSizes] = useState({
@@ -16,7 +15,8 @@ export const Prediccion = () => {
         descuento: '',
         promocion: '',
         pago: '',
-        compra: ''
+        compra: '',
+        localizacion:''
     });
 
     const handleSizeChange = (event, talla) => {
@@ -30,7 +30,7 @@ export const Prediccion = () => {
         e.preventDefault();
 
         const edad = document.getElementById('txtedad').value;
-        const localizacion = document.getElementById('txtlocalizacion').value;
+        const localizacion = document.getElementById('localizacion').value;
         const talla = document.getElementById('cmbtalla').value;
         const color = document.getElementById('cmbcolor').value;
         const temporada = document.getElementById('cmbtemporada').value;
@@ -39,9 +39,7 @@ export const Prediccion = () => {
         const previa = document.getElementById('previa').value;
         const pago = document.getElementById('cmbtipopago').value;
         const frecuencia = document.getElementById('cmbfrecuencia').value;
-        console.log('Edad:', edad);
-        console.log('Localización:', localizacion);
-        console.log('Valores seleccionados:', talla);
+  
 
         const fetchData = {
             method: 'POST', // Método de la solicitud (POST, GET, etc.)
@@ -52,7 +50,7 @@ export const Prediccion = () => {
             body: JSON.stringify({
                 // Aquí puedes incluir los datos necesarios para la autenticación
                 edad: parseInt(document.getElementById("txtedad").value),
-                localizacion: parseInt(document.getElementById("txtlocalizacion").value),
+                localizacion: parseInt(document.getElementById("localizacion").value),
                 talla: parseInt(document.getElementById("cmbtalla").value),
                 color: parseInt(document.getElementById("cmbcolor").value),
                 temporada: parseInt(document.getElementById("cmbtemporada").value),
@@ -138,15 +136,66 @@ export const Prediccion = () => {
                                     </div>
                                     <div className="col-md-6">
                                         <div className="form-group mb-3">
-                                            <label>Localizacion</label>
-                                            <input type="text"
+                                            <label htmlFor="validationCustom04" className="form-label">Localizacion</label>
+                                            <select type="text"
                                                 className="form-control"
                                                 placeholder=" Localizacion"
                                                 aria-label="Last name"
-                                                id="txtlocalizacion"
-                                                onChange={(e) => setlocalizacion(e.target.value)}
-                                                value={localizacion}
-                                            />
+                                                id="localizacion"
+                                                value={selectedSizes.localizacion} // Asigna el valor del estado al select para reflejar la selección
+                                                onChange={(e) => handleSizeChange(e, 'localizacion')} // Manejador para el cambio de selecció
+                                            >
+                                                <option defaultValue="">Choose...</option>
+                                                <option value='16'>Kentucky</option>
+                                                <option value='18'>Maine</option>
+                                                <option value='20'>Massachusetts</option>
+                                                <option value='38'>Rhode Island</option>
+                                                <option value='36'>Oregon</option>
+                                                <option value='49'>Wyoming</option>
+                                                <option value='25'>Montana</option>
+                                                <option value='17'>Louisiana</option>                                             
+                                                <option value='47'>West Virginia</option>
+                                                <option value='24'>Missouri</option>
+                                                <option value='3'>Arkansas</option>
+                                                <option value='10'>Hawaii</option>
+                                                <option value='7'>Delaware</option>
+                                                <option value='28'>New Hampshire</option>
+                                                <option value='31'>New York</option>
+                                                <option value='0'>Alabama</option>
+                                                <option value='23'>Mississippi</option>
+                                                <option value='32'>North Carolina</option>
+                                                <option value='4'>California</option>
+                                                <option value='34'>Oklahoma</option>
+                                                <option value='8'>Florida</option>
+                                                <option value='42'>Texas</option>
+                                                <option value='27'>Nevada</option>
+                                                <option value='15'>Kansas</option>
+                                                <option value='5'>Colorado</option>
+                                                <option value='33'>North Dakota</option>
+                                                <option value='12'>Illinois</option>
+                                                <option value='13'>Indiana</option>
+                                                <option value='2'>Arizona</option>
+                                                <option value='1'>Alaska</option>
+                                                <option value='41'>Tennessee</option>
+                                                <option value='34'>Ohio</option>
+                                                <option value='29'>New Jersey</option>
+                                                <option value='19'>Maryland</option>
+                                                <option value='44'>Vermont</option>
+                                                <option value='30'>New Mexico</option>
+                                                <option value='39'>South Carolina</option>
+                                                <option value='11'>Idaho</option>
+                                                <option value='37'>Pennsylvania</option>
+                                                <option value='6'>Connecticut</option>
+                                                <option value='43'>Utah</option>
+                                                <option value='45'>Virginia</option>
+                                                <option value='9'>Georgia</option>
+                                                <option value='26'>Nebraska</option>
+                                                <option value='14'>Iowa</option>
+                                                <option value='40'>South Dakota</option>
+                                                <option value='22'>Minnesota</option>
+                                                <option value='46'>Washington</option>
+                                                <option value='21'>Wisconsin</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -155,6 +204,7 @@ export const Prediccion = () => {
                                         <div className="form-group mb-3">
                                             <label htmlFor="validationCustom04" className="form-label">Talla</label>
                                             <select
+                                                type="text"
                                                 className="form-select"
                                                 id="cmbtalla"
                                                 required
