@@ -75,54 +75,6 @@ export const Admin = () => {
                 });
             }
         }
-
-        /* if (email === '' && password === '') {
-
-
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'INGRESE SUS CREDENCIALES POR FAVOR',
-                footer: '<a href="">Necesitas ayuda?</a>',
-                timer: 2000,
-                timerProgressBar: true,
-                showConfirmButton: false
-            });
-            return;
-
-            }else{
-                const isAdmin = true;
-
-
-            if (email==='Samir' && password==='123') {
-                // Establecer isAdmin como true en el estado local
-                setIsAdmin(true);
-                console.log('isAdmin después de establecerlo como verdadero:', isAdmin); // Agregar esta línea
-
-                navigate('/Dashboard');
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Bienvenido Administrador',
-                    timer: 2000,
-                    timerProgressBar: true,
-                    showConfirmButton: false
-                }); 
-                // Resto de tu lógica después de ser administrador...
-            } else {
-                // Si las credenciales son correctas pero el usuario no es administrad
-                // Resto de tu lógica...
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'INGRESE SUS CREDENCIALES POR FAVOR',
-                    timer: 2000,
-                    timerProgressBar: true,
-                    showConfirmButton: false
-                }); 
-            }
-        } 
-    }; */
-
     };
     return (
 
